@@ -397,7 +397,7 @@ config values (conf.py):
                 source = "\n".join(self.content[:idx])
                 suffix = "\n".join(self.content[idx + 1 :])
             elif "=====" in self.content:
-                idx = self.content.index("=====")
+                idx = self.content.index("====")
                 source = "\n".join(self.content[:idx])
                 suffix = "\n".join(self.content[idx + 1 :])
             else:
