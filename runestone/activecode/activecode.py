@@ -239,6 +239,10 @@ config values (conf.py):
                 idx = self.content.index("~~~~")
                 explain_text = self.content[:idx]
                 self.content = self.content[idx + 1 :]
+            elif "~~~~~" in self.content:
+                idx = self.content.index("~~~~~")
+                explain_text = self.content[:idx]
+                self.content = self.content[idx + 1 :]
             source = "\n".join(self.content)
         else:
             source = "\n"
@@ -390,6 +394,10 @@ config values (conf.py):
         if self.content:
             if "====" in self.content:
                 idx = self.content.index("====")
+                source = "\n".join(self.content[:idx])
+                suffix = "\n".join(self.content[idx + 1 :])
+            elif "=====" in self.content:
+                idx = self.content.index("=====")
                 source = "\n".join(self.content[:idx])
                 suffix = "\n".join(self.content[idx + 1 :])
             else:
